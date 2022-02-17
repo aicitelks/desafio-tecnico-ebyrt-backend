@@ -5,11 +5,11 @@ const {
 } = require('../services/taskService');
 const { OK } = require('../utils/statusCodes');
 
-const findAllController = async (req, res) => {
+const findAllController = rescue(async (_req, res) => {
   const tasks = await findAllService();
 
   res.status(200).json(tasks);
-};
+});
 
 const insertTaskController = rescue(async (req, res) => {
   const { name } = req.body;

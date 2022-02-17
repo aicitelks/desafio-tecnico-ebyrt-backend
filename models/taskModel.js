@@ -8,6 +8,15 @@ const findAll = async () => {
   return tasks;
 };
 
+const insertTask = async (name) => {
+  const db = await connect();
+
+  const { insertedId } = await db.collection('tasks').insertOne({ name });
+
+  return insertedId;
+};
+
 module.exports = {
   findAll,
+  insertTask,
 };

@@ -3,12 +3,16 @@ const {
   findAllService,
   insertTaskService,
 } = require('../services/taskService');
-const { OK } = require('../utils/statusCodes');
+
+const {
+  OK,
+  CREATED,
+} = require('../utils/statusCodes');
 
 const findAllController = rescue(async (_req, res) => {
   const tasks = await findAllService();
 
-  res.status(200).json(tasks);
+  res.status(OK).json(tasks);
 });
 
 const insertTaskController = rescue(async (req, res) => {
@@ -16,7 +20,7 @@ const insertTaskController = rescue(async (req, res) => {
 
   const newTask = await insertTaskService(name);
 
-  return res.status(OK).json(newTask);
+  return res.status(CREATED).json(newTask);
 });
 
 module.exports = {

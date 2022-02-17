@@ -15,9 +15,9 @@ const insertTaskService = async (name) => {
   const { error } = taskSchema.validate({ name });
   if (error) throw error;
 
-  const newTask = await insertTask(name);
+  const id = await insertTask(name);
 
-  return newTask;
+  return { newTask: { id, name } };
 };
 
 module.exports = {

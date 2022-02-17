@@ -1,11 +1,9 @@
-# Desafio Técnico Ebyrt
-### Repositório do Banck-End
+# Desafio Técnico Ebyrt 🚀
+### Repositório do Back-End
 
-Neste repositório encontra-se o desafio técnico desenvolvido para na semana da Blitz de Carreira da @Trybe.
+Neste repositório encontra-se o desafio técnico desenvolvido na semana da Blitz de Carreira da @Trybe.
 
 Dado o contexto de que era necessário criar uma aplicação para ajudar os colaboradores da empresa Ebyrt a  organizarem melhor as suas tarefas individuais, foi desenvolvida uma aplicação de lista de tarefas.
-
-O Back-End foi feito em NodeJS, com MongoDB.
 
 ---
 
@@ -35,10 +33,7 @@ No terminal execute os comandos à seguir:
 ```sh
   npm start
 ```
-
-Para testar os endpoints implementados, utilize o cliente HTTP de sua preferência. Sugestão: [Insomnia](https://insomnia.rest/).
-
-* URL local: ```http://localhost:3001/tasks```
+A aplicação roda na porta ```3001```.
 
 ## Para executar os testes
 Os testes unitários foram implementados em Jest. No terminal, digite o comando
@@ -46,8 +41,14 @@ Os testes unitários foram implementados em Jest. No terminal, digite o comando
   npm test
 ```
 
+---
+
 # Rotas da aplicação
-A rota *GET* ```/taks``` lista todas as tarefas cadastradas no banco.
+Para testar os endpoints implementados, utilize o cliente HTTP de sua preferência. Sugestão: [Insomnia](https://insomnia.rest/).
+
+* URL local: ```http://localhost:3001```
+
+A rota *GET* ```/tasks``` lista todas as tarefas cadastradas no banco.
 
 A rota *POST* ```/tasks``` permite a criação de uma nova tarefa. Para isso basta informar no corpo da requisição o "nome" dela, como no exemplo:
 ```
@@ -63,10 +64,21 @@ O desenvolvimento da API (server) foi realizado utilizando a arquitetura MSC - M
 
 Também foi utilizado o ```router``` para o gerenciamento das rotas.
 
-A aplicação foi baseada na arquitetura MERN (MongoDB, Express, React, Node).
-
-No back-end foi utilizado o framework Node.js com Express. 
+A aplicação foi baseada na arquitetura MERN (MongoDB, Express, React, Node), sendo ME_N para o back-end.
 
 Para a padronização e qualidade de código foi utilizado o *ES Lint*.
 
-Desenvolvido com ♥ em JavaScript, Node, Express no VS Code.
+---
+
+### :computer: Implementações futuras
+- Implementação do CRUD completo
+- Implementação do Front-end com React
+- Deploy no Heroku
+
+# Contato
+### Letícia Castro
+:large_blue_circle: [LinkedIn](https://www.linkedin.com/in/leticiacastro87/)
+
+---
+
+Desenvolvido com ♥ em JavaScript, Node, Express no VS Code | 2022

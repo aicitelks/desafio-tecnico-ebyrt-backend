@@ -5,7 +5,12 @@ const {
   deleteTaskService,
 } = require('../services/taskService');
 
-const { OK, NO_CONTENT } = require('../utils/statusCodes');
+const {
+  OK,
+  CREATED,
+  NO_CONTENT,
+} = require('../utils/statusCodes');
+
 
 const findAllController = rescue(async (_req, res) => {
   const tasks = await findAllService();
@@ -18,7 +23,7 @@ const insertTaskController = rescue(async (req, res) => {
 
   const newTask = await insertTaskService(name);
 
-  return res.status(OK).json(newTask);
+  return res.status(CREATED).json(newTask);
 });
 
 const deleteTaskController = rescue(async (req, res) => {

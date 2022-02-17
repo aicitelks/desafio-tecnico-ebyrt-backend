@@ -56,6 +56,9 @@ A rota *POST* ```/tasks``` permite a criação de uma nova tarefa. Para isso bas
     "name": "Nome da Tarefa"
   }
 ```
+
+A rota *DELETE* ```/tasks:id``` permite a exclusão da tarefa pelo id. Forneça um ID válido nos parâmetros da rota para excluir a tarefa, bastando substituir o ":id" pelo ID da tarefa.
+
 # Desenvolvimento
 O desenvolvimento da API (server) foi realizado utilizando a arquitetura MSC - Models, Services, Controllers.
 - *Models* foram implementadas as funções que administram o banco de dados

@@ -2,13 +2,15 @@ const rescue = require('express-rescue');
 const {
   findAllService,
   insertTaskService,
+  deleteTaskService,
 } = require('../services/taskService');
-const { OK } = require('../utils/statusCodes');
+
+const { OK, NO_CONTENT } = require('../utils/statusCodes');
 
 const findAllController = rescue(async (_req, res) => {
   const tasks = await findAllService();
 
-  res.status(200).json(tasks);
+  res.status(OK).json(tasks);
 });
 
 const insertTaskController = rescue(async (req, res) => {
@@ -19,7 +21,15 @@ const insertTaskController = rescue(async (req, res) => {
   return res.status(OK).json(newTask);
 });
 
+const deleteTaskController = rescue(async (req, res) => {
+  const { id } = req.params;
+  await deleteTaskService(id);
+
+  return res.status(NO_CONTENT).end();
+});
+
 module.exports = {
   findAllController,
   insertTaskController,
+  deleteTaskController,
 };
